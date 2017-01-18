@@ -1,0 +1,15 @@
+:8000
+gzip
+maxrequestbody 200MB
+
+log stdout
+errors stderr
+
+root html/
+
+proxy /application 127.0.0.1:9000 {
+    transparent
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-Server {host}
+    header_upstream X-Forwarded-Host {host}
+}
