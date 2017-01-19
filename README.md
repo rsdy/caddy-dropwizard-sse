@@ -4,9 +4,10 @@ Dropwizard SSE Example
 This is a minimal example to demonstrate Server-Sent Events using Dropwizard 1.0.
 A `Caddyfile` is provided as an example for getting to web-scale.
 
-To run, just type (you'll need maven and caddy):
+You can use docker to get started quickly:
 
-    ./start.sh
+    docker build -t caddy-dropwizard .
+    docker run -p 8000:8000 -p 9000:9000 -d caddy-dropwizard
 
 Dropwizard will bind to port `:9000`, and caddy to `:8000`.
 You can test the API is working through caddy using:
