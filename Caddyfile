@@ -1,5 +1,7 @@
 :8000
-gzip
+gzip {
+     not /application/events
+}
 maxrequestbody 200MB
 
 log stdout
